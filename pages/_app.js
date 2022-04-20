@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     fetch(
-      "https://api.weatherapi.com/v1/current.json?key=012d3170981e4017a56160201222004&q=kolding&aqi=no"
+      "https://api.weatherapi.com/v1/current.json?key=012d3170981e4017a56160201222004&q=miami&aqi=no"
     )
       .then((response) => response.json())
       .then((actualData) => {
