@@ -1,8 +1,8 @@
-import styles from "../styles/MainPanel.module.scss";
-import Blurb from "./Blurb";
-import ConditionImage from "./ConditionImage";
-import clsx from "clsx";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
+import ConditionImage from "./ConditionImage";
+import Blurb from "./Blurb";
+import styles from "../styles/MainPanel.module.scss";
 
 const MainPanel = ({ data }) => {
   const [localDate, setLocalDate] = useState(null);
@@ -23,10 +23,15 @@ const MainPanel = ({ data }) => {
         data.current.is_day === 1 ? styles.day : styles.night
       )}
     >
-      <ConditionImage condition={data.current.condition.text} />
-      <h2 className={styles.temperature}>{data.current.temp_c}</h2>
-      <p className={styles.condition}>{data.current.condition.text}</p>
-      <p className={styles.date}>{localDate}</p>
+      <div className={styles.weatherInfo}>
+        <ConditionImage
+          condition={data.current.condition.text}
+          dayOrNight={data.current.is_day}
+        />
+        <h2 className={styles.temperature}>{data.current.temp_c}</h2>
+        <p className={styles.condition}>{data.current.condition.text}</p>
+        <p className={styles.date}>{localDate}</p>
+      </div>
       <div className={styles.line}></div>
       <div className={styles.blurbList}>
         <Blurb
@@ -41,7 +46,12 @@ const MainPanel = ({ data }) => {
           unit="%"
           image="humidity"
         />
-        <Blurb title="Chance of rain" data="87" unit="%" image="rain" />
+        <Blurb
+          title="Feels like"
+          data={data.current.feelslike_c}
+          unit="°"
+          image="celsius"
+        />
       </div>
     </div>
   );

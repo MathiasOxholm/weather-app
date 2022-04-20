@@ -1,17 +1,15 @@
 .MainPanel {
   background-color: var(--blue-6);
-  //background: var(--gradient-22);
   padding-top: calc(var(--header-height) + 1rem);
   padding-bottom: 2rem;
   padding-inline: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: calc(100% - 1rem);
-  margin-top: 0.5rem;
-  border-radius: var(--radius-3);
-  margin-inline: auto;
+  justify-content: space-around;
+  transition: var(--transition);
+  width: 100%;
+  height: 100%;
 
   &.day {
     background-color: var(--blue-6);
@@ -19,16 +17,23 @@
   }
 
   &.night {
-    background: var(--gradient-23);
+    background: var(--gradient-8);
   }
 }
 
+.weatherInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .temperature {
-  font-size: 9rem;
+  font-size: 8rem;
   position: relative;
   line-height: 1;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 
   &::after {
     content: "°";
@@ -46,9 +51,10 @@
 }
 
 .date {
-  font-size: var(--font-size-0);
+  font-size: var(--font-size-1);
   color: var(--gray-1);
   opacity: 0.5;
+  margin-top: 0.25rem;
 }
 
 .line {
