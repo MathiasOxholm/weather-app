@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import clsx from "clsx";
 import styles from "../styles/ConditionImage.module.scss";
 
 const ConditionImage = ({ condition, dayOrNight }) => {

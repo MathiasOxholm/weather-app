@@ -6,6 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 99;
 }
 
 .container {
@@ -24,3 +25,4 @@
   display: flex;
   align-items: center;
 }
+
