@@ -18,6 +18,8 @@ const ChooseLocation = ({ handleLocationPopup, handleSubmit }) => {
             id="location"
             onChange={(e) => setFormData(e.target.value)}
             autoFocus
+            required
+            minLength="3"
           />
           <button type="submit" className={styles.submit}>
             Set location
