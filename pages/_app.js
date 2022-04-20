@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setCurrentLocation(e.target[0].value);
+    handleLocationPopup();
   };
 
   return (
