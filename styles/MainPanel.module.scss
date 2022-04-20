@@ -1,0 +1,66 @@
+.MainPanel {
+  background-color: var(--blue-6);
+  //background: var(--gradient-22);
+  padding-top: calc(var(--header-height) + 1rem);
+  padding-bottom: 2rem;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 1rem);
+  margin-top: 0.5rem;
+  border-radius: var(--radius-3);
+  margin-inline: auto;
+
+  &.day {
+    background-color: var(--blue-6);
+    background: var(--gradient-7);
+  }
+
+  &.night {
+    background: var(--gradient-23);
+  }
+}
+
+.temperature {
+  font-size: 9rem;
+  position: relative;
+  line-height: 1;
+  text-align: center;
+  margin-top: 1rem;
+
+  &::after {
+    content: "°";
+    position: absolute;
+    top: 1rem;
+    right: -1.5rem;
+    font-size: var(--font-size-8);
+    opacity: 0.75;
+  }
+}
+
+.condition {
+  font-size: var(--font-size-5);
+  color: var(--gray-1);
+}
+
+.date {
+  font-size: var(--font-size-0);
+  color: var(--gray-1);
+  opacity: 0.5;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--blue-1);
+  margin-block: 2rem;
+  opacity: 0.25;
+}
+
+.blurbList {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

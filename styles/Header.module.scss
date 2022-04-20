@@ -1,0 +1,25 @@
+.Header {
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0.5rem;
+  left: 0;
+}
+
+.container {
+  width: 100%;
+  padding-inline: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.location {
+  color: var(--gray-1);
+  font-size: var(--font-size-4);
+  display: flex;
+  align-items: center;
+}

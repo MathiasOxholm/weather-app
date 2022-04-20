@@ -1,0 +1,24 @@
+.MenuIcon {
+  display: grid;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  gap: 2px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.75rem;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dot {
+      height: 4px;
+      width: 4px;
+      border-radius: 100%;
+      background-color: var(--gray-1);
+    }
+  }
+}
