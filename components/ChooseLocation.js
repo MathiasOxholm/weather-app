@@ -1,12 +1,8 @@
 import styles from "../styles/ChooseLocation.module.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ChooseLocation = ({ handleLocationPopup, handleSubmit }) => {
   const [formData, setFormData] = useState("");
-
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
 
   return (
     <>
