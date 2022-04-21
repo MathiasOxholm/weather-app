@@ -10,3 +10,7 @@ Mathias Oxholm
 ## 3D Icons
 
 The beautiful 3D Weather icons are from [hosein_bagheri](https://ui8.net/hosein_bagheri/products/3d-weather-icons40)
+
+## Live Demo
+
+[Try out the weather app](https://weather-app-mathiasoxholm.vercel.app/)
