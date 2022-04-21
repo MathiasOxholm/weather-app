@@ -10,10 +10,11 @@ function MyApp({ Component, pageProps }) {
   const [error, setError] = useState(null);
   const [showLocationPopup, setShowLocationPopup] = useState(false);
   const [currentLocation, setCurrentLocation] = useState("kolding");
+  const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/current.json?key=012d3170981e4017a56160201222004&q=${currentLocation}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${currentLocation}&aqi=no`
     )
       .then((response) => response.json())
       .then((actualData) => {
@@ -27,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       .finally(() => {
         setLoading(false);
       });
-  }, [currentLocation]);
+  }, [currentLocation, apiKey]);
 
   const handleLocationPopup = () => {
     setShowLocationPopup(!showLocationPopup);
@@ -41,6 +42,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      {loading && <div>Loading</div>}
       {error && (
         <div>{`There is a problem fetching weather data - ${error}`}</div>
       )}
