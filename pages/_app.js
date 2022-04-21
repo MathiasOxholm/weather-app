@@ -13,6 +13,14 @@ function MyApp({ Component, pageProps }) {
   const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
   useEffect(() => {
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
+  }, []);
+
+  useEffect(() => {
     fetch(
       `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${currentLocation}&aqi=no`
     )
