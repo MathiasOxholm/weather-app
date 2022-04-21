@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "open-props/style";
 import "open-props/normalize";
 import ChooseLocation from "../components/ChooseLocation";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   const [data, setData] = useState(null);
@@ -72,13 +73,15 @@ function MyApp({ Component, pageProps }) {
           {...pageProps}
         />
       )}
-      {showLocationPopup && (
-        <ChooseLocation
-          handleLocationPopup={handleLocationPopup}
-          handleSubmit={handleSubmit}
-          useMyLocation={useMyLocation}
-        />
-      )}
+      <AnimatePresence>
+        {showLocationPopup && (
+          <ChooseLocation
+            handleLocationPopup={handleLocationPopup}
+            handleSubmit={handleSubmit}
+            useMyLocation={useMyLocation}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }

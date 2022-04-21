@@ -1,5 +1,6 @@
 import styles from "../styles/ChooseLocation.module.scss";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const ChooseLocation = ({
   handleLocationPopup,
@@ -10,8 +11,21 @@ const ChooseLocation = ({
 
   return (
     <>
-      <div className={styles.overlay} onClick={handleLocationPopup}></div>
-      <div className={styles.ChooseLocation}>
+      <motion.div
+        className={styles.overlay}
+        onClick={handleLocationPopup}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: "easeOut", duration: 0.3 }}
+      />
+      <motion.div
+        className={styles.ChooseLocation}
+        initial={{ y: 240 }}
+        animate={{ y: 0 }}
+        exit={{ y: 240 }}
+        transition={{ ease: "easeOut", duration: 0.3 }}
+      >
         <p className={styles.useMyLocation} onClick={useMyLocation}>
           Use my location
         </p>
@@ -32,7 +46,7 @@ const ChooseLocation = ({
             Set location
           </button>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 };

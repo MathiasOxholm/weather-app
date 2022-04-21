@@ -5,11 +5,9 @@ import MoreIcon from "./MoreIcon";
 const Header = ({ data, handleLocationPopup }) => {
   return (
     <div className={styles.Header}>
-      <div className={styles.container}>
+      <div className={styles.container} onClick={handleLocationPopup}>
         <MenuIcon />
-        <p className={styles.location} onClick={handleLocationPopup}>
-          {data.location.name}
-        </p>
+        <p className={styles.location}>{data.location.name}</p>
         <MoreIcon />
       </div>
     </div>
