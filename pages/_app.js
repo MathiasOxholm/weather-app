@@ -10,12 +10,21 @@ function MyApp({ Component, pageProps }) {
   const [error, setError] = useState(null);
   const [showLocationPopup, setShowLocationPopup] = useState(false);
   const [currentLocation, setCurrentLocation] = useState("london");
+  const [userLocation, SetUserLocation] = useState(null);
   const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+
+  const useMyLocation = () => {
+    setCurrentLocation(userLocation);
+    handleLocationPopup();
+  };
 
   useEffect(() => {
     if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
+      navigator.geolocation.getCurrentPosition((position) => {
         setCurrentLocation(
+          position.coords.latitude + "," + position.coords.longitude
+        );
+        SetUserLocation(
           position.coords.latitude + "," + position.coords.longitude
         );
       });
@@ -67,6 +76,7 @@ function MyApp({ Component, pageProps }) {
         <ChooseLocation
           handleLocationPopup={handleLocationPopup}
           handleSubmit={handleSubmit}
+          useMyLocation={useMyLocation}
         />
       )}
     </>

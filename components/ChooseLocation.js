@@ -1,13 +1,20 @@
 import styles from "../styles/ChooseLocation.module.scss";
 import { useState } from "react";
 
-const ChooseLocation = ({ handleLocationPopup, handleSubmit }) => {
+const ChooseLocation = ({
+  handleLocationPopup,
+  handleSubmit,
+  useMyLocation,
+}) => {
   const [formData, setFormData] = useState("");
 
   return (
     <>
       <div className={styles.overlay} onClick={handleLocationPopup}></div>
       <div className={styles.ChooseLocation}>
+        <p className={styles.useMyLocation} onClick={useMyLocation}>
+          Use my location
+        </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input
             type="text"
