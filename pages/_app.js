@@ -9,14 +9,16 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showLocationPopup, setShowLocationPopup] = useState(false);
-  const [currentLocation, setCurrentLocation] = useState("kolding");
+  const [currentLocation, setCurrentLocation] = useState("london");
   const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
   useEffect(() => {
     if ("geolocation" in navigator) {
-      console.log("Available");
-    } else {
-      console.log("Not Available");
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setCurrentLocation(
+          position.coords.latitude + "," + position.coords.longitude
+        );
+      });
     }
   }, []);
 
