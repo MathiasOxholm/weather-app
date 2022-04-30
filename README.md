@@ -20,7 +20,7 @@ The beautiful 3D Weather icons are from [hosein_bagheri](https://ui8.net/hosein_
 
 ## Live Demo
 
-[Try out the weather app](https://weatheroxholm.dev/)
+[Try out the weather app](https://weather.oxholm.dev/)
 
 ## Fork it
 
