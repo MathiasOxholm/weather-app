@@ -4,7 +4,16 @@ import ConditionImage from "./ConditionImage";
 import Blurb from "./Blurb";
 import styles from "../styles/MainPanel.module.scss";
 
-const MainPanel = ({ data }) => {
+interface dataInner {
+  current: any;
+  location: any;
+}
+
+interface Props {
+  data: dataInner;
+}
+
+const MainPanel: React.FC<Props> = ({ data }) => {
   const [localDate, setLocalDate] = useState(null);
 
   useEffect(() => {

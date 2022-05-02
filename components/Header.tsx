@@ -2,7 +2,20 @@ import styles from "../styles/Header.module.scss";
 import MenuIcon from "./MenuIcon";
 import MoreIcon from "./MoreIcon";
 
-const Header = ({ data, handleLocationPopup }) => {
+interface dataName {
+  name: string;
+}
+
+interface dataProps {
+  location: dataName;
+}
+
+interface Props {
+  data: dataProps;
+  handleLocationPopup: () => void;
+}
+
+const Header: React.FC<Props> = ({ data, handleLocationPopup }) => {
   return (
     <div className={styles.Header}>
       <div className={styles.container} onClick={handleLocationPopup}>

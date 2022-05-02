@@ -1,6 +1,6 @@
 import styles from "../styles/MoreIcon.module.scss";
 
-const MoreIcon = () => {
+const MoreIcon: React.FC = () => {
   return (
     <div className={styles.MoreIcon}>
       <span></span>

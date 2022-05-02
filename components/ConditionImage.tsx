@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "../styles/ConditionImage.module.scss";
 
-const ConditionImage = ({ condition, dayOrNight }) => {
+interface Props {
+  condition: string;
+  dayOrNight: number;
+}
+
+const ConditionImage: React.FC<Props> = ({ condition, dayOrNight }) => {
   const [dayNight, setDayNight] = useState(null);
 
   useEffect(() => {

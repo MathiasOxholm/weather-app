@@ -2,7 +2,13 @@ import styles from "../styles/ChooseLocation.module.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const ChooseLocation = ({
+interface Props {
+  handleLocationPopup: () => void;
+  handleSubmit: any;
+  useMyLocation: () => void;
+}
+
+const ChooseLocation: React.FC<Props> = ({
   handleLocationPopup,
   handleSubmit,
   useMyLocation,
@@ -40,7 +46,7 @@ const ChooseLocation = ({
             onChange={(e) => setFormData(e.target.value)}
             autoFocus
             required
-            minLength="3"
+            minLength={3}
           />
           <button type="submit" className={styles.submit}>
             Set location

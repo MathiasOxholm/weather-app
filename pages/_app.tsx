@@ -4,8 +4,9 @@ import "open-props/style";
 import "open-props/normalize";
 import ChooseLocation from "../components/ChooseLocation";
 import { AnimatePresence } from "framer-motion";
+import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

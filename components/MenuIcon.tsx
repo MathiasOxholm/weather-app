@@ -1,6 +1,6 @@
 import styles from "../styles/MenuIcon.module.scss";
 
-const MenuIcon = () => {
+const MenuIcon: React.FC = () => {
   return (
     <div className={styles.MenuIcon}>
       <span>

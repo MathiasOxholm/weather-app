@@ -1,7 +1,14 @@
 import Image from "next/image";
 import styles from "../styles/Blurb.module.scss";
 
-const Blurb = ({ title, data, unit, image }) => {
+interface Props {
+  title: string;
+  data: number | string;
+  unit: string;
+  image: string;
+}
+
+const Blurb: React.FC<Props> = ({ title, data, unit, image }) => {
   return (
     <div className={styles.Blurb}>
       <Image src={`/svg/${image}.svg`} width={24} height={24} alt={image} />
