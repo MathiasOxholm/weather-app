@@ -5,8 +5,8 @@ import Blurb from "./Blurb";
 import styles from "../styles/MainPanel.module.scss";
 
 interface dataInner {
-  current: any;
-  location: any;
+  current?: any;
+  location?: any;
 }
 
 interface Props {
